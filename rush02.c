@@ -25,7 +25,7 @@ void loop()
     char *other[] = {"", "", "", "hundred and", "thousand"};
 }
 
-int recursive(int   num)
+/*int recursive(int   num)
 {
     int j;
     int *rev_arr;
@@ -37,6 +37,33 @@ int recursive(int   num)
         rev_arr[j] = num;
         j++;
     }
+}*/
+
+int		ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int *get_rev_arr(int num, int size)
+{
+    int i;
+    int *arr;
+
+    i = 0;
+    arr = malloc(sizeof(int) * size);
+    while (num > 9)
+    {
+        arr[i] = num % 10;
+        num = num / 10;
+        i++;
+    }
+    arr[i] = num % 10;
+    return (arr);
 }
 
 int	ft_pow_rec(int i, int n)
@@ -71,12 +98,14 @@ int	ft_atoi(char *str)
 int main(int argc, char **argv)
 {
 	int	num;
+    int len;
 
     if (argc == 2)
     {
     //Figure out how to convert char into int
 		num = ft_atoi(argv[1]);
-        recursive(num);
+        len = ft_strlen(agrv[1]);
+        get_rev_arr(num, len);
     }
     return (0);
 }
