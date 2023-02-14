@@ -1,8 +1,9 @@
 # rush02
-Rush02 Proposed Solution
+## Rush02 Proposed Solution
 
 The new strategy is to use a function array that iteratively deals with the place values of each digit. e.g., once it finds out the the nuber is 3 digits, the function array with index the third function which corresponds with the hundrendths element and deals with that accordingly
-
+this should work better.
+/--------/--------/--------/--------/-------/--------/----------/
 1. First we take the input and use modulus to cut off the last value of that number and insert it into an array. Now we have an array of our input, but in reverse–we’ll call this “rev_arr”
 
 2. Since we used a counter to insert each last number of the input into rev_arr, we now know the length of the input, this will tell us if its three digits which corresponds to hundreds, or two digits, which tells us it corresponds to the ..-ty’s numbers e.g., twenty, thirty etc. 
